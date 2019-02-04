@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="XInsure.Workflow.Designer.View.DesignerView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Width="1400"
+      Height="650"
+	>
+
+    <StackPanel Height="800" Width="1400"  >
+        <Grid x:Name="designerGrid" Width="1400"  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="700"/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="450" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+            <Button Content="Save" Command="{Binding Submit}"  Grid.Row="3" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="20" />
+            <Label Content="Name" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Grid.Column="1" Text="{Binding Name}" Grid.Row="1" Height="30" Width="300"/>
+            <Label Content="Description" Grid.Column="0" Grid.Row="2"/>
+            <TextBox Grid.Column="1" Text="{Binding Description}" Grid.Row="2" Height="50" Width="300"/>
+        </Grid>
+    </StackPanel>
+</UserControl>

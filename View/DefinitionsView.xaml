@@ -1,0 +1,39 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:XInsure.Workflow.Designer.ViewModel" x:Class="XInsure.Workflow.Designer.View.DefinitionsView" 
+             mc:Ignorable="d" 
+             >
+    <Grid>
+        <StackPanel HorizontalAlignment="Left"  Height="400" Width="500"  VerticalAlignment="Top" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="300"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid AutoGenerateColumns="False" SelectedItem="{Binding Definitions}" IsReadOnly="True"   HorizontalAlignment="Left" CanUserAddRows="False" CanUserSortColumns="True" x:Name="dgdDefintions"  ItemsSource="{Binding Definitions}"   VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" >
+                    <DataGrid.InputBindings>
+                        <MouseBinding  Gesture="LeftDoubleClick" Command="{Binding Edit}" CommandParameter="{Binding SelectedItem, ElementName=dgdDefintions}"/>
+                    </DataGrid.InputBindings>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="130" />
+                        <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="100"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+                <Button Content="Refersh" HorizontalAlignment="Right"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Width="75" Command="{Binding Refresh}" Margin="0,10,0,0"/>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
